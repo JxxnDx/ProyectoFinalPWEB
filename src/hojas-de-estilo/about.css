@@ -1,0 +1,44 @@
+.aboutUS{
+    width: 1170px;
+    height: 368px;
+    margin: 40px 150px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 3px 13px 1px rgb(0 0 0 / 9%);
+}
+
+.logoUis{
+    height: 50%;
+    width: auto;
+}
+
+.Info{
+    text-align: center;
+    padding: 40px;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+}
+
+.titulo2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32px;
+}
+
+.integrantes{
+    font-family: Lato, sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.estudiante{
+    margin: 40px 150px 50px;
+    background-color: #fff;
+    box-shadow: 0 3px 13px 1px rgb(0 0 0 / 9%);
+    text-align: center;
+    padding: 40px;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+}
