@@ -29,7 +29,7 @@ function Home() {
                         </div>
                         <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src={promo1} alt="Promo1" className="d-block" style={{width: '100%', height: '300px'}}/>
+                            <img src={promo3} alt="Promo1" className="d-block" style={{width: '100%', height: '300px'}}/>
                         </div>
                         <div className="carousel-item">
                             <img src={promo2} alt="Promo2" className="d-block" style={{width: '100%', height: '300px'}}/>

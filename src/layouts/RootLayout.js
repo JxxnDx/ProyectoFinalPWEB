@@ -1,7 +1,7 @@
 import {NavLink, Outlet} from "react-router-dom";
 import carrito from '../imgs/carrito1.png'
-import MyClothes from '../imgs/MyClothes.png'
-import usuario from '../imgs/usuario.png'
+import MyClothes from '../imgs/MyClothes-removebg-preview.png'
+import usuario from '../imgs/MyClothes.png'
 import '../App.css';
 
 export default function RootLayout() {
@@ -30,8 +30,8 @@ export default function RootLayout() {
                 <ul>
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="about">About</NavLink></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Inventario</a></li>
+                    <li><a href="#">Formulario</a></li>
+                    <li><a href="#">Tienda</a></li>
                     <li className="item-carrito"><a href="#" style={{float: 'right'}}><img src={carrito} width="35px" height="33px"></img></a></li>
                     <form className="d-flex">
                         <input className="form-control me-2" type="text" placeholder="Buscar prendas..."></input>
