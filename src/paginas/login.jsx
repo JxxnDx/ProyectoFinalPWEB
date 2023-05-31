@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom"
 import Contexto from "../context/contexto";
-import "./log.css";
+import "./log2.css";
 
 
 
@@ -13,11 +13,16 @@ const Login = () => {
     const [usuario, setUsuario] = useState("");
     const [contrasena, setContrasena] = useState("");
     const [error, setError] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
 
     const login=(event)=>{
       event.preventDefault();
       if  (usuario === "usuario" && contrasena === "contrasena") {
-        navegacion('/login',{replace:true})
+        navegacion('/',{replace:true})
         logearme('usuario')
     }
     else {
@@ -25,40 +30,47 @@ const Login = () => {
     }
   };
     return (
-    <><div class="todo">
-       <div class="tit">
-              <p class ="titulo"><span class="c1">MY</span><span class="c2">CLOTHES</span></p>
-            </div>
       <div className="container">
-           
-          <form onSubmit={login}>
-               <div>
-                   <label htmlFor="usuario">Usuario:</label>
-                      <input
-                         type="text"
-                         id="usuario"
-                         value={usuario}
-                        onChange={(e) => setUsuario(e.target.value)}
-                      />
-                </div>
-                <div>
-                     <label htmlFor="contrasena">Contraseña:</label>
-                      <input
-                      type="password"
-                     id="contrasena"
-                     placeholder="******"
-                      value={contrasena}
-                     onChange={(e) => setContrasena(e.target.value)}
-                    />
-                </div>
-                <button type="submit">Iniciar sesión</button>
-                 {error && <p>{error}</p>}
-           </form>
-            <button> No tienes Cuenta? !Registrate</button>
+      <div className="text-container">
+        <h1 className="text-center text-white">MYCLOTHES</h1>
       </div>
+      <div className="login-container">
+        <form onSubmit={login}>
+          <div className="login-form-group">
+            <label htmlFor="email">Correo electrónico</label>
+            <input type="text" id="email"  value={usuario}
+                        onChange={(e) => setUsuario(e.target.value)} className="form-control" />
+          </div>
+          <div className="login-form-group">
+            <label htmlFor="password">Contraseña</label>
+            <div className="input-group">
+              <input type="password" id="password"  value={contrasena}
+                     onChange={(e) => setContrasena(e.target.value)} className="form-control" />
+              <div className="input-group-append">
+                <div className="input-group-text">
+                  <input type="checkbox" id="show-password"  checked={showPassword} onChange={handleShowPassword} />
+                  <label className="form-check-label" htmlFor="show-password">
+                    Mostrar contraseña
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" className="btn btn-primary mx-auto d-block">
+            Iniciar sesión
+          </button>
+        </form>
+        <div className="text-center mt-3">
+          <a href="#" className="forgot-password-link">
+            ¿Olvidaste tu contraseña?
+          </a>
+          <br />
+          <a href="#" className="create-account-link">
+            ¿No tienes una cuenta?
+          </a>
+        </div>
       </div>
-
-    </>
+    </div>
     
   )
 }

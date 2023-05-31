@@ -3,9 +3,13 @@ margin: 0;
 
 
 }
+html{
+  padding: 0;
+  height: 100%;
+}
 .todo{ background-size: cover;
   background-image: url("./3176003.png");
-
+  height: 100%;
 
 
 }

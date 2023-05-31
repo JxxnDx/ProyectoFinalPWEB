@@ -1,6 +1,8 @@
 import {Routes,Route} from "react-router-dom"
 import React from 'react'
 import Login from "../paginas/login"
+import NavBar from"../navbar/NavBar"
+import Home from"../paginas/home"
 
 import Recuperacion from "../paginas/recuperacion"
 import Router2 from "./router2"
@@ -11,6 +13,7 @@ const router1 = () => {
   return (
     <>
     <Routes>
+    <Route path="/" element={<RutasPublicas><NavBar /><Home/></RutasPublicas>} />
         <Route path = "login" element = {
             <RutasPublicas>
                 <Login/>

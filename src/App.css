@@ -1,42 +1,218 @@
-.App {
-  text-align: center;
-  display:flex;
-  min-height:  100vh;
-  align-items: center;
-  justify-content: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+html{
+    padding: 0;
+    height: 100%;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  body{
+    color: black;
+    background-color: #f4f5f6;
+    padding: 0;
+    margin: 0;
+    border: auto;
+    font-family: 'Alkatra', serif;
+    font-size: 1.6rem;
+    height: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .Encabezado{
+    display: flex;
+    background-color: #27374D;
+    color: white;
+    height: 5rem;
+    justify-content: space-between;
   }
-}
+  
+  .titulo{
+    text-align: center;
+    justify-content: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3.8rem;
+    text-shadow: 4px 4px 10px purple;
+    /*transition: text-shadow 0.5s;*/
+    animation: color-change 3s infinite;
+  }
+  
+  @keyframes color-change{
+    0%{text-shadow: 4px 4px 10px purple}
+    50%{text-shadow: 8px 8px 20px rgb(145, 193, 209)}
+  
+  }
+  
+  /*.titulo:hover{
+      text-shadow: 4px 4px 10px purple, 8px 8px 20px #D4AF37;
+  }*/
+  
+  .iniciar{
+    display:flex;
+    position: relative;
+    margin: 15px;
+    z-index: 9999999;
+  }
+  
+  .iniciar a img{
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .iniciar a img:hover{
+    transform: scale(1.1);
+  }
+  
+  .menuBar{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #DDE6ED;
+    z-index: 9999;
+  }
+  
+  .menuBar > ul{
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+  }
+  
+  /* Style the topnav links*/
+  .menuBar li a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 5px 16px;
+    text-decoration: none;
+    font-family: sans-serif;
+  }
+  
+  /* Change color on hover */
+  .menuBar li a:hover {
+    background-color: black;
+    color: lightskyblue;
+  }
+  
+  .menuBar > ul form{
+    padding-top: 4px;
+  }
+  
+  .btn-primary{
+    background-color: #526D82;
+  }
+  
+  .contenido{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    min-height: 100%;
+    background-color: white;
+  }
+  
+  .contenido > div{
+    background-color: white;
+    height: 100%;
+  }
+  
+  .filtros{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
+  }
+  
+  .filtros > ul{
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+  }
+  
+  .filtros li a{
+    display: block;
+    color: #333;
+    width: 100%;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+  } 
+  
+  .filtros li a.active{
+    background-color: #526D82;
+    color: white;
+  }
+  
+  /* Change color on hover */
+  .filtros li a:hover:not(.active) {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .filtros > img{
+    margin: 25px;
+    width: 158.7px;
+    height: 224.5;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .filtros > img:hover{
+    transform: scale(1.1);
+  }
+  
+  .Productos{
+    display: flex;
+    width: 85%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .Promociones{
+    width: 100%;
+    height: 45%;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .producto{
+    display: flex;
+    flex-direction: column;
+    text-shadow: #D4AF37;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+  }
+  
+  .Productos > div a:last-child{
+    font-size: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .menuBar a {
+      float: none;
+      width: 100%;
+    }
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .contenido{
+      width: 100%;
+      padding: 0;
+    }
+  }
