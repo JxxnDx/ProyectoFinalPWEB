@@ -92,7 +92,7 @@ const Login = () => {
                 sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                 onChange={handleCaptchaChange}
               />
-              {captchaError && <span className="error">Completa el CAPTCHA</span>}
+              {captchaError && <span className="error">¿Eres un robot? completa el captcha</span>}
             </div>
             <button type="submit" className="btn btn-primary mx-auto d-block">
               Iniciar sesión
