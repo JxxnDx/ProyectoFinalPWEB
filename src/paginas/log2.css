@@ -1,12 +1,35 @@
-body {
-    background-color:black;
+*{
+ 
+ margin: 0;
+ padding: 0;
+
+
+}
+.todo{
+  background-color:black;
+  height: 55vmax;
+  margin: 0;
+  background-size: cover;
+  background-image: url("./3176003.png");
+
+
+
+}
+.container {
+    
     font-family: 'Arial Narrow', sans-serif;
+    
+   
   }
+.titulo{
+
+  color: white;
+}
   
   .login-container {
     max-width: 500px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 5px;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 30px;
     border-radius: 10px;
@@ -56,6 +79,10 @@ body {
     font-size: 18px;
     color: #000000;
   }
+  .input-group-text{
+    margin:10px;
+
+  }
   
   .login-form-group input[type="text"],
   .login-form-group input[type="password"] {
@@ -65,28 +92,33 @@ body {
     border: 1px solid #ccc;
   }
   
+  
   .forgot-password-link,
   .create-account-link {
     color: blue;
   }
   
   .btn-primary {
-    font-size: 24px;
-    padding: 12px 30px;
+    font-size: 100px;
+    padding: 1px 1px;
     transition: all 0.3s;
+    height: 5vmax;
+    width: 12vmax;
+  }
+  .btn btn-primary mx-auto d-block{
+    font-size: 200px;
+
   }
   
   .btn-primary:hover {
     transform: scale(1.1);
+    
   }
   
   .text-container {
     text-align: center;
     position: relative;
     top: -10px;
-  }
-  
-  .login-container {
-    margin-top: 5px;
+    margin-top: 0px;
   }
   
