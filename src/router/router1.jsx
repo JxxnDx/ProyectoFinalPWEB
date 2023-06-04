@@ -3,6 +3,8 @@ import React from 'react'
 import Login from "../paginas/login"
 import NavBar from"../navbar/NavBar"
 import Home from"../paginas/home"
+import Error404 from '../paginas/Error404';
+
 
 import Recuperacion from "../paginas/recuperacion"
 import Router2 from "./router2"
@@ -26,6 +28,8 @@ const router1 = () => {
             <RutasPublicas>
                 <Recuperacion/>
             </RutasPublicas>}/>
+            <Route path="*" element={<Error404 />} /> 
+
         
         <Route path = "/*" element = {
             
