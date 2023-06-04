@@ -8,6 +8,7 @@ import ig from '../imgs/ig.png'
 import fb from '../imgs/Facebook_f_logo_(2019).svg.png'
 import tw from '../imgs/Twitter-logo.png'
 import '../App.css';
+import React from "react"
 
 
 const NavBar = () => {
@@ -36,7 +37,7 @@ const Logout =()=>{
                 <ul>        
                     <li><NavLink to="home">Home</NavLink></li>
                     <li><NavLink to="about">About</NavLink></li>
-                    <li><a href="#">Formulario</a></li>
+                    <li><NavLink to="Formulario">Formulario</NavLink></li>
                     <li><a href="#">Tienda</a></li>
                     <li className="item-carrito"><NavLink to="carrito" style={{float: 'right'}}><img src={carrito} width="35px" height="33px"></img></NavLink></li>
                     <form className="d-flex">

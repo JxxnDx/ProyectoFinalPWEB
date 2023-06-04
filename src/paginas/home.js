@@ -4,6 +4,7 @@ import promo3 from "../imgs/promo3.jpg"
 import hombre from "../imgs/hombre.png"
 import mujer from "../imgs/mujer.png"
 import niño from "../imgs/niño.png"
+import React from "react"
 
 function Home() {
     return (

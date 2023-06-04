@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Contexto from "../context/contexto";
 import ReCAPTCHA from "react-google-recaptcha";
 import "../hojas-de-estilo/log2.css";
+import React from "react";
 
 const Login = () => {
   const { logearme } = useContext(Contexto);
