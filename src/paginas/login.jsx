@@ -33,7 +33,7 @@ const Login = () => {
     }
 
     if (usuario === "usuario" && contrasena === "contrasena") {
-      navegacion("/", { replace: true });
+      navegacion("/privado/", { replace: true });
       logearme("usuario");
     } else {
       setError("Usuario o contraseña incorrectos");

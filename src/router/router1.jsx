@@ -28,10 +28,10 @@ const router1 = () => {
             <RutasPublicas>
                 <Recuperacion/>
             </RutasPublicas>}/>
-            <Route path="*" element={<Error404 />} /> 
+             <Route path="*" element={<Error404 />} />  
 
         
-        <Route path = "/*" element = {
+        <Route path = "/privado/*" element = {
             
             <RutasPrivadas>
                 
