@@ -1,21 +1,17 @@
-import {Route, Link, NavLink, createBrowserRouter, createRoutesFromElements, RouterProvider
-} from "react-router-dom";
-import './App.css';
-import Home from './paginas/home.js'
-import About from './paginas/About.js'
-import RootLayout from "./layouts/RootLayout";
+import Provider from "./context/provider";
+import Router1 from "./router/router1.jsx";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const router = createBrowserRouter(
-    createRoutesFromElements(
-        <Route path={"/"} element={<RootLayout />}>
-            <Route index element={<Home />} />
-            <Route path={"about"} element={<About />} />
-        </Route>
-    )
-)
-function App() {
-  return(
-    <RouterProvider router={router} />
+function App () {
+  
+  return (
+    <>
+    <Provider>
+        <Router1/>
+    </Provider>
+     
+    </>
   )
 }
-export default App;
+
+export default App

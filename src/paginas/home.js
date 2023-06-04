@@ -1,6 +1,4 @@
 import "../App.css";
-import banner from "../imgs/www.myclothes.com.png"
-import promo1 from "../imgs/promo1.jpg"
 import promo2 from "../imgs/promo2.jpg"
 import promo3 from "../imgs/promo3.jpg"
 import hombre from "../imgs/hombre.png"
@@ -17,7 +15,6 @@ function Home() {
                     <li><a href="#">Talla</a></li>
                     <li><a href="#">Otros</a></li>
                 </ul>
-                <img src={banner} alt="oferta"></img>
             </div>
             <div className="Productos">
                 <div className = "Promociones">

@@ -5,7 +5,6 @@ export default function About() {
     return(
         <div className = "about">
             <div className= "aboutUS">
-                <img className = "logoUis" src = {require("../imgs/UIS.png")} alt = "uis"/> 
                 <div className = "Info">
                     <p className = "titulo2">¿Quiénes somos?</p>
                     <p className = "texto"><span style={{fontSize: '32px', fontWeight: 'bold', color: 'purple'}}>H</span>ola! Somos un grupo de estudiantes de la Universidad Industrial de Santander,

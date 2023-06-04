@@ -14,6 +14,34 @@ body{
   height: 100%;
 }
 
+.footer{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #27374D;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.redes > a{
+  margin: 5px;
+  text-decoration: none;
+}
+
+.redes > a img{
+  transition: transform 0.5s ease-in-out;
+}
+
+.redes > a img:hover{
+  transform: scale(1.1);
+}
+
 .Encabezado{
   display: flex;
   background-color: #27374D;
@@ -28,7 +56,6 @@ body{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 3.8rem;
   text-shadow: 4px 4px 10px purple;
-  /*transition: text-shadow 0.5s;*/
   animation: color-change 3s infinite;
 }
 
@@ -44,6 +71,10 @@ body{
 
 .iniciar{
   margin: 15px;
+  display:flex;
+  position: relative;
+  margin: 15px;
+  z-index: 9999999;
 }
 
 .iniciar a img{
@@ -84,12 +115,16 @@ body{
 
 /* Change color on hover */
 .menuBar li a:hover {
-  background-color: black;
+  background-color: rgb(44, 44, 44);
   color: lightskyblue;
 }
 
 .menuBar > ul form{
   padding-top: 4px;
+}
+
+.d-flex{
+  height: 40px;
 }
 
 .btn-primary{
@@ -180,22 +215,6 @@ body{
   justify-content: center;
   width: 400px;
   height: 400px;
-}
-
-.Productos > div a:last-child{
-  font-size: 1.2rem;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.footer{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  text-align: center;
 }
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */

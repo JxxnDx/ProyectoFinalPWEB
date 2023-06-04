@@ -1,0 +1,95 @@
+*{ 
+ margin: 0;
+ padding: 0;
+}
+
+.todo{
+  background-color:black;
+  height: 55vmax;
+  margin: 0;
+  background-size: cover;
+  background-image: url("../imgs/3176003.png");
+}
+
+.container {
+    font-family: 'Arial Narrow', sans-serif; 
+}
+
+.titulo{
+  color: white;
+}
+  
+.login-container {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+}
+  
+  @keyframes rayo {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .login-form-group {
+    margin-bottom: 20px;
+  }
+  
+  .login-form-group label {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
+  }
+  .input-group-text{
+    margin:10px;
+
+  }
+  
+  .login-form-group input[type="text"],
+  .login-form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  
+  .forgot-password-link,
+  .create-account-link {
+    color: blue;
+  }
+  
+  .btn-primary {
+    font-size: 100px;
+    padding: 1px 1px;
+    transition: all 0.3s;
+    height: 5vmax;
+    width: 12vmax;
+  }
+  .btn btn-primary mx-auto d-block{
+    font-size: 200px;
+
+  }
+  
+  .btn-primary:hover {
+    transform: scale(1.1);
+    
+  }
+  
+  .text-container {
+    text-align: center;
+    position: relative;
+    top: -10px;
+    margin-top: 0px;
+  }
+  
