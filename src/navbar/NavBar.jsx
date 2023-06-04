@@ -9,6 +9,8 @@ import usuario from '../imgs/MyClothes.png'
 // import DropdownComponent from './Dropdown';
 // import { Dropdown } from 'react-bootstrap';
 import '../App.css';
+//import Formulario from "../paginas/Formulario";
+
 
 
 const NavBar = () => {
@@ -27,10 +29,6 @@ const Logout =()=>{
     //             <NavLink to = "contenido3">contenido3</NavLink>
     //             <NavLink to = "login">login</NavLink>
     //             <button onClick={Logout}>Logout</button>
-
-
-
-
 
     //     </nav>
     
@@ -76,8 +74,9 @@ const Logout =()=>{
             <ul>
                 <li><NavLink to="home">Home</NavLink></li>
                 <li><NavLink to="about">About</NavLink></li>
-                {/* <li><NavLink to="login">login</NavLink></li> */}
-                <li><a href="#">Formulario</a></li>
+                <li><NavLink to="Formulario">Formulario</NavLink></li>
+                {/* <li><NavLink to="login">login</NavLink></li> 
+                //<li><a href="#">Formulario</a></li>*/}
                 <li><a href="#">Tienda</a></li>
                  {/* <button onClick={Logout}>Logout</button>  */}
                 <li className="item-carrito"><a href="#" style={{float: 'right'}}><img src={carrito} width="35px" height="33px"></img></a></li>

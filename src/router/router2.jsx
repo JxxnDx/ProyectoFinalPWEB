@@ -6,6 +6,7 @@ import Contenido3 from "../paginas/Contenido3"
 import About from "../paginas/About"
 import Carrito from "../paginas/Carrito"
 import NavBar from "../navbar/NavBar"
+import { Formulario } from "../paginas/Formulario"
 const router2 = () => {
   return (
     <>
@@ -13,11 +14,9 @@ const router2 = () => {
         <Routes>
             <Route path="Home" element={<Home/>}/>
             <Route path="About" element={<About/>}/>
-            {/* <Route path="Carrito" element={<Carrito/>}/> */}
+            {/* <Route path="Carrito"S element={<Carrito/>}/> */}
             <Route path="/" element= {<Navigate to= "Home"/> }/>
-
-
-
+            <Route path="Formulario" element={<Formulario/>}/>
         </Routes>
     
     

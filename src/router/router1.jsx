@@ -3,11 +3,11 @@ import React from 'react'
 import Login from "../paginas/login"
 import NavBar from"../navbar/NavBar"
 import Home from"../paginas/home"
-
 import Recuperacion from "../paginas/recuperacion"
 import Router2 from "./router2"
 import RutasPublicas from "./RutasPublicas"
 import RutasPrivadas from "./RutasPrivadas"
+
 
 const router1 = () => {
   return (
