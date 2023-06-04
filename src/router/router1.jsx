@@ -12,18 +12,25 @@ import RutasPrivadas from "./RutasPrivadas"
 const router1 = () => {
   return (
     <>
+    
     <Routes>
-    <Route path="/" element={<RutasPublicas><NavBar /><Home/></RutasPublicas>} />
+    
+    <Route path="/" element={<RutasPublicas><NavBar/><Home/></RutasPublicas>} />
         <Route path = "login" element = {
             <RutasPublicas>
+               
+               
                 <Login/>
             </RutasPublicas>}/>
         <Route path = "recuperacion" element = {
             <RutasPublicas>
                 <Recuperacion/>
             </RutasPublicas>}/>
+        
         <Route path = "/*" element = {
+            
             <RutasPrivadas>
+                
                 <Router2/>
             </RutasPrivadas> }/>
     </Routes>

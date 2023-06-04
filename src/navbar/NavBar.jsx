@@ -74,7 +74,7 @@ const Logout =()=>{
         </div>
         <div className="menuBar">
             <ul>
-                <li><NavLink to="home">Home</NavLink></li>
+                <li><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="about">About</NavLink></li>
                 {/* <li><NavLink to="login">login</NavLink></li> */}
                 <li><a href="#">Formulario</a></li>

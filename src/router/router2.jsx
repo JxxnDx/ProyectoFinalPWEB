@@ -11,7 +11,7 @@ const router2 = () => {
     <>
         <NavBar/>
         <Routes>
-            <Route path="Home" element={<Home/>}/>
+            <Route path="Home" element={<Home/>}/> 
             <Route path="About" element={<About/>}/>
             {/* <Route path="Carrito" element={<Carrito/>}/> */}
             <Route path="/" element= {<Navigate to= "Home"/> }/>
