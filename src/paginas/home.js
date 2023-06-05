@@ -5,16 +5,17 @@ import hombre from "../imgs/hombre.png"
 import mujer from "../imgs/mujer.png"
 import niño from "../imgs/niño.png"
 import React from "react"
+import { NavLink } from "react-router-dom";
 
 function Home() {
     return (
         <div className="contenido">
             <div className="filtros">
                 <ul>
-                    <li><a className="active" href="#">Aplicar filtros</a></li>
-                    <li><a href="#">Tipo de prenda</a></li>
-                    <li><a href="#">Talla</a></li>
-                    <li><a href="#">Otros</a></li>
+                    <li><NavLink className="active" to="carrito">Aplicar filtros</NavLink></li>
+                    <li><NavLink to="carrito">Tipo de prenda</NavLink></li>
+                    <li><NavLink to="carrito">Talla</NavLink></li>
+                    <li><NavLink to="carrito">Otros</NavLink></li>
                 </ul>
             </div>
             <div className="Productos">
@@ -46,15 +47,15 @@ function Home() {
                 </div>
                 <div className = "producto">
                     HOMBRE
-                    <a href="#"><img src={hombre} width="400" height="300"/></a>
+                    <NavLink to="Carrito"><img src={hombre} width="400" height="300"/></NavLink>
                 </div>
                 <div className = "producto">
                     MUJER
-                    <a href="#"><img src={mujer} width="350" height="300"/></a>
+                    <NavLink to="Carrito" href="#"><img src={mujer} width="350" height="300"/></NavLink>
                 </div>
                 <div className = "producto">
                     NIÑO
-                    <a href="#"><img src={niño} width="400" height="300"/></a>
+                    <NavLink to="Carrito"><img src={niño} width="400" height="300"/></NavLink>
                 </div>        
             </div>
         </div>

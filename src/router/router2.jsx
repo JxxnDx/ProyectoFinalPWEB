@@ -4,6 +4,8 @@ import Home from "../paginas/home"
 import About from "../paginas/About"
 import Carrito from "../paginas/Carrito"
 import NavBar from "../layouts/NavBar"
+import Error from '../paginas/Error'
+import Footer from '../paginas/Footer'
 import { Formulario } from "../paginas/Formulario"
 
 const router2 = () => {
@@ -16,7 +18,9 @@ const router2 = () => {
             <Route path="Carrito" element={<Carrito/>}/> 
             <Route path="/" element= {<Navigate to= "Home"/> }/>
             <Route path="Formulario" element={<Formulario/>}/>
+            <Route path="*" element={<Error/>}/>
         </Routes>
+        <Footer/>      
     </>
   ) 
 }

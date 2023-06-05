@@ -45,7 +45,7 @@ const Login = () => {
 
   return (
     <div className="todo">
-      <div className="container">
+      <div className="containerLog">
         <div className="text-container">
           <h1 className="titulo">MYCLOTHES</h1>
         </div>

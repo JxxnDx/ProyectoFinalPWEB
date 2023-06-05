@@ -1,4 +1,5 @@
 import React from "react"
+import Accordion from 'react-bootstrap/Accordion';
 import "../hojas-de-estilo/about.css"
 
 export default function About() {
@@ -17,22 +18,40 @@ export default function About() {
             
             <h1 className="integrantes">Integrantes:</h1>
 
-            <div className="estudiante">
-            <p className="nombre">Nery Karolina Aponte Barajas - 2202021</p>
-            <p className="texto"></p>
-            </div>
-            <div className="estudiante">
-                <p className="nombre">Juan Jerónimo Jauregui Prince - 2220068</p>
-                <p className="texto"></p>
-            </div>
-            <div className="estudiante">
-                <p className="nombre">Roger Sergio Hernandez Sierra - 2220065 </p>
-                <p className="texto"></p>
-            </div>
-            <div className="estudiante">
-                <p className="nombre">Juan David Pallares Pallares - 2220079</p>
-                <p className="texto"></p>
-            </div>
+            <Accordion className="acordeon">
+                <Accordion.Item eventKey="0">
+                    <Accordion.Header className="nombre">Nery Karolina Aponte Barajas</Accordion.Header>
+                    <Accordion.Body>
+                    Código: 2202021 <br></br>
+                    Carrera: Ingenieria de Sistemas  <br></br>
+                    Semestre: Sexto
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="1">
+                    <Accordion.Header className="nombre">Juan Jerónimo Jauregui Prince</Accordion.Header>
+                    <Accordion.Body>
+                    Código: 2220065 <br></br>
+                    Carrera: Ingenieria de Sistemas <br></br>
+                    Semestre: Tercero
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="2">
+                    <Accordion.Header className="nombre">Roger Sergio Hernandez Sierra</Accordion.Header>
+                    <Accordion.Body>
+                    Código: 2220068 <br></br>
+                    Carrera: Ingenieria de Sistemas <br></br>
+                    Semestre: Tercero
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="3">
+                    <Accordion.Header className="nombre">Juan David Pallares Pallares</Accordion.Header>
+                    <Accordion.Body>
+                    Código: 2220079 <br></br>
+                    Carrera: Ingenieria de Sistemas <br></br>
+                    Semestre: Tercero
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion>
         </div>
         
     )
