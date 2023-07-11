@@ -3,6 +3,8 @@
 
 const express = require("express");
 const mysql = require("mysql");
+
+
 const cors = require("cors");
 // const nodemailer = require("nodemailer")
 const session = require("express-session");
@@ -54,12 +56,15 @@ app.use(cors());
 
   
 
-const con = mysql.createConnection({
-    user: "root",
-    host: "localhost",
-    password: "",
-    database: "myclothes"
-})
+ const con = mysql.createConnection({
+     user: "root",
+     host: "localhost",
+     password: "",
+     database: "myclothes",
+    
+ })
+
+ 
 
 const validarCorreo = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -83,37 +88,37 @@ app.post('/register', (req, res) => {
      if (!validarCorreo(email)) {
          return res.send({ message: "Correo electrónico inválido" });
        }
-    con.query("INSERT INTO usuario (email, usu, clave) VALUES (?, ?, ?)", [email, usuario, password], 
-        (err, result) => {
-            if(result){
+     con.query("INSERT INTO usuario (email, usu, clave) VALUES (?, ?, ?)", [email, usuario, password], 
+         (err, result) => {
+             if(result){
                 res.send(result);
-            }else{
-                res.send({message: "pon los datos de forma correcta!"})
-            }
-        }
-    )
+             }else{
+                 res.send({message: "pon los datos de forma correcta!"})
+             }
+         }
+     )
 })
 
-app.post("/login", (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
+ app.post("/login", (req, res) => {
+     const username = req.body.username;
+     const password = req.body.password;
 
-    // req.session.user = { id: 1, username: usuario };
-    // req.session.lastActivity = moment();
-    con.query("SELECT * FROM usuario WHERE usu = ? AND clave = ?", [username, password], 
-        (err, result) => {
-            if(err){
-                req.setEncoding({err: err});
-            }else{
-                if(result.length > 0){
-                    res.send(result);
-                }else{
-                    res.send({message: "WRONG USERNAME OR PASSWORD!"})
-                }
+     // req.session.user = { id: 1, username: usuario };
+     // req.session.lastActivity = moment();
+     con.query("SELECT * FROM usuario WHERE usu = ? AND clave = ?", [username, password], 
+         (err, result) => {
+             if(err){
+                 req.setEncoding({err: err});
+             }else{
+                 if(result.length > 0){
+                     res.send(result);
+                 }else{
+                     res.send({message: "WRONG USERNAME OR PASSWORD!"})
+                 }
             }
-        }
-    )
-})
+         }
+     )
+ })
 
 // Ruta para el home
 // app.get("/home", (req, res) => {

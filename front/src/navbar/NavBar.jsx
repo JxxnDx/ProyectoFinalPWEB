@@ -78,7 +78,7 @@ const Logout =()=>{
                 <li><NavLink to="about">About</NavLink></li>
                 {/* <li><NavLink to="login">login</NavLink></li> */}
                 <li><a href="#">Formulario</a></li>
-                <li><a href="#">Tienda</a></li>
+                <li><a href="/store">Tienda</a></li>
                  {/* <button onClick={Logout}>Logout</button>  */}
                 <li className="item-carrito"><a href="#" style={{float: 'right'}}><img src={carrito} width="35px" height="33px"></img></a></li>
                 <form className="d-flex">
@@ -97,9 +97,7 @@ const Logout =()=>{
         </main>
     </div>
 
-    <div className="footer">Universidad Industrial de Santander<br></br>
-        Bucaramanga - Santander
-    </div>
+   
 </div>
   )
 }

@@ -2,8 +2,11 @@ import {Routes,Route} from "react-router-dom"
 import React from 'react'
 import Login from "../paginas/login"
 import NavBar from"../navbar/NavBar"
+import Footer from"../navbar/Footer"
 import Home from"../paginas/home"
+import Store from "../paginas/Store";
 import Error404 from '../paginas/Error404';
+import Producto from '../paginas/producto';
 
 
 import Register from "../paginas/Register"
@@ -17,7 +20,7 @@ const router1 = () => {
     
     <Routes>
     
-    <Route path="/" element={<RutasPublicas><NavBar/><Home/></RutasPublicas>} />
+    <Route path="/" element={<RutasPublicas><NavBar/><Home/><Footer/></RutasPublicas>} />
         <Route path = "login" element = {
             <RutasPublicas>
                
@@ -28,7 +31,10 @@ const router1 = () => {
             <RutasPublicas>
                 <Register/>
             </RutasPublicas>}/>
-             <Route path="*" element={<Error404 />} />  
+             <Route path="*" element={<Error404 />} />
+             <Route path="/tienda" element={<RutasPublicas><NavBar/><Producto/><Footer/></RutasPublicas>} />
+             <Route path="/store" element={<RutasPublicas><NavBar/><Store/><Footer/></RutasPublicas>} />
+
 
         
         <Route path = "/privado/*" element = {

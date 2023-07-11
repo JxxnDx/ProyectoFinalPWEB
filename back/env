@@ -1,0 +1,1 @@
+DATABASE_URL='mysql://tnaa2kw3iabmpwfrj3du:pscale_pw_6xV1nBxXxXmG52xeqseOC0jV9T5Elr4LIdRGTYTjNoG@aws.connect.psdb.cloud/myclothes?ssl={"rejectUnauthorized":true}'
