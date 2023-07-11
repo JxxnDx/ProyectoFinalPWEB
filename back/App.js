@@ -1,12 +1,9 @@
 // import formData from 'form-data';
 // import Mailgun from 'mailgun.js';
-
+require('dotenv').config();
+const port = process.env.PORT || 3001
+const mysql = require('mysql2')
 const express = require("express");
-const mysql = require("mysql");
-const multer = require("multer");
-
-
-
 const cors = require("cors");
 // const nodemailer = require("nodemailer")
 const session = require("express-session");
@@ -56,17 +53,10 @@ app.use(cors());
 //     next();
 //   });
 
-  
 
- const con = mysql.createConnection({
-     user: "root",
-     host: "localhost",
-     password: "",
-     database: "myclothes",
-    
- })
 
- 
+
+const con = mysql.createConnection(process.env.DATABASE_URL)
 
 const validarCorreo = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -82,65 +72,69 @@ const validarCorreo = (email) => {
 
 // const mailgun = new Mailgun(formData);
 // const client = mailgun.client({username: 'api', key: API_KEY});
+app.post('/upload', (req, res) => {
+    const nombre = req.body.name;
+   
+    const file = req.files.file;
+    console.log(file)
+    con.query("INSERT INTO media (nombre, archivo) VALUES (?, ?)", [nombre, file],
+        (err, result) => {
+        if (err){
+            console.log("error")
+            res.send(err)
+        } else {
+            console.log("sirvió")
+            res.send(req)
+        }
+    })
+})
 app.post('/register', (req, res) => {
     const email = req.body.email;
     const usuario = req.body.username;
     const password = req.body.password;
 
-     if (!validarCorreo(email)) {
-         return res.send({ message: "Correo electrónico inválido" });
-       }
-     con.query("INSERT INTO usuario (email, usu, clave) VALUES (?, ?, ?)", [email, usuario, password], 
-         (err, result) => {
-             if(result){
+//     if (!validarCorreo(email)) {
+//         return res.send({ message: "Correo electrónico inválido" });
+//       }
+    con.query("INSERT INTO usuario (email, usu, clave) VALUES (?, ?, ?)", [email, usuario, password], 
+        (err, result) => {
+            if(result){
+                console.log(email)
+                console.log(usuario)
+                console.log(password)
+                console.log(result)
                 res.send(result);
-             }else{
-                 res.send({message: "pon los datos de forma correcta!"})
-             }
-         }
-     )
+            }else{
+                console.log(email)
+                console.log(usuario)
+                console.log(password)
+                console.log(result)
+                res.send({message: "pon los datos de forma correcta!"})
+            }
+        }
+    )
 })
 
- app.post("/login", (req, res) => {
-     const username = req.body.username;
-     const password = req.body.password;
+app.post("/login", (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
 
-     // req.session.user = { id: 1, username: usuario };
-     // req.session.lastActivity = moment();
-     con.query("SELECT * FROM usuario WHERE usu = ? AND clave = ?", [username, password], 
-         (err, result) => {
-             if(err){
-                 req.setEncoding({err: err});
-             }else{
-                 if(result.length > 0){
-                     res.send(result);
-                 }else{
-                     res.send({message: "WRONG USERNAME OR PASSWORD!"})
-                 }
+    // req.session.user = { id: 1, username: usuario };
+    // req.session.lastActivity = moment();
+    con.query("SELECT * FROM usuario WHERE usu = ? AND clave = ?", [username, password], 
+        (err, result) => {
+            if(err){
+                req.setEncoding({err: err});
+            }else{
+                if(result.length > 0){
+                    res.send(result);
+                }else{
+                    res.send({message: "WRONG USERNAME OR PASSWORD!"})
+                }
             }
-         }
-     )
- })
- const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, "uploads/"); // Directorio donde se guardarán los archivos subidos
-    },
-    filename: function (req, file, cb) {
-      const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-      cb(null, uniqueSuffix + "-" + file.originalname); // Nombre del archivo en el servidor
-    },
-  });
-  
-  const upload = multer({ storage: storage });
-  app.post("/upload", upload.single("file"), (req, res) => {
-    if (!req.file) {
-      res.status(400).send("No se ha seleccionado ningún archivo");
-    } else {
-      res.send("Archivo subido correctamente");
-    }
-  });
-  
-  
+        }
+    )
+})
 
 // Ruta para el home
 // app.get("/home", (req, res) => {
@@ -150,8 +144,7 @@ app.post('/register', (req, res) => {
 //     }
 //     res.send("");
 //   });
-  
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
+});
 
-app.listen(3001, () => {
-    console.log("running backend server");
-})

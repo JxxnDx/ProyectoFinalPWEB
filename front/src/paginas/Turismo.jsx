@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+
 const FileUploadForm = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState("");
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
+    
   };
 
   const handleSubmit = async (event) => {
@@ -19,9 +21,12 @@ const FileUploadForm = () => {
 
     const formData = new FormData();
     formData.append("file", selectedFile);
+    console.log(selectedFile)
+    console.log(formData.file)
+
 
     try {
-      const response = await axios.post("/upload", formData);
+      const response = await axios.post("http://localhost:3001/upload", formData);
       setUploadStatus("Archivo subido correctamente");
       console.log(response.data);
     } catch (error) {
