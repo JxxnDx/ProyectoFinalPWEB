@@ -3,6 +3,8 @@
 
 const express = require("express");
 const mysql = require("mysql");
+const multer = require("multer");
+
 
 
 const cors = require("cors");
@@ -119,6 +121,26 @@ app.post('/register', (req, res) => {
          }
      )
  })
+ const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, "uploads/"); // Directorio donde se guardarán los archivos subidos
+    },
+    filename: function (req, file, cb) {
+      const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+      cb(null, uniqueSuffix + "-" + file.originalname); // Nombre del archivo en el servidor
+    },
+  });
+  
+  const upload = multer({ storage: storage });
+  app.post("/upload", upload.single("file"), (req, res) => {
+    if (!req.file) {
+      res.status(400).send("No se ha seleccionado ningún archivo");
+    } else {
+      res.send("Archivo subido correctamente");
+    }
+  });
+  
+  
 
 // Ruta para el home
 // app.get("/home", (req, res) => {

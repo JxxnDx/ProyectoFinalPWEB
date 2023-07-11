@@ -77,8 +77,9 @@ const Logout =()=>{
                 <li><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="about">About</NavLink></li>
                 {/* <li><NavLink to="login">login</NavLink></li> */}
-                <li><a href="#">Formulario</a></li>
+                <li><a href="/formulario">Formulario</a></li>
                 <li><a href="/store">Tienda</a></li>
+                <li><a href="/turismo">Turismo</a></li>
                  {/* <button onClick={Logout}>Logout</button>  */}
                 <li className="item-carrito"><a href="#" style={{float: 'right'}}><img src={carrito} width="35px" height="33px"></img></a></li>
                 <form className="d-flex">

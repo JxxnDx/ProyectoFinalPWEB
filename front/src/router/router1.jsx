@@ -4,7 +4,9 @@ import Login from "../paginas/login"
 import NavBar from"../navbar/NavBar"
 import Footer from"../navbar/Footer"
 import Home from"../paginas/home"
+import Turismo from"../paginas/Turismo"
 import Store from "../paginas/Store";
+import Formulario from"../paginas/Formulario";
 import Error404 from '../paginas/Error404';
 import Producto from '../paginas/producto';
 
@@ -34,6 +36,8 @@ const router1 = () => {
              <Route path="*" element={<Error404 />} />
              <Route path="/tienda" element={<RutasPublicas><NavBar/><Producto/><Footer/></RutasPublicas>} />
              <Route path="/store" element={<RutasPublicas><NavBar/><Store/><Footer/></RutasPublicas>} />
+             <Route path="/formulario" element={<RutasPublicas><NavBar/><Formulario/><Footer/></RutasPublicas>} />
+             <Route path="/turismo" element={<RutasPublicas><NavBar/><Turismo/><Footer/></RutasPublicas>} />
 
 
         
